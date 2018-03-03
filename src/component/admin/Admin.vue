@@ -45,7 +45,10 @@ import Aside from './subcom/Aside.vue'
     }
     .el-aside {
         text-align: center;
-        background-color: navajowhite;
+        background-color: #545c64;
+    }
+    .el-main{
+        background-color: #bfa;
     }
 } 
 </style>
