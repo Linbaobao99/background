@@ -41,11 +41,11 @@ import Aside from './subcom/Aside.vue'
     .el-header{
         line-height: 60px;
         color: #333;
-        background-color: rgb(230, 230, 71);
+        background-color: #bcf;
     }
     .el-aside {
         text-align: center;
-        background-color: #545c64;
+        background-color: #fba;
     }
     .el-main{
         background-color: #bfa;
