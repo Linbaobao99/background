@@ -27,7 +27,7 @@ export default {
                     title:'商品管理',
                     children:[
                         {title:'内容管理',path:'/admin/goods/list'},
-                        {title:'类别管理',path:'/admin/goods/detail'},
+                        {title:'类别管理',path:'/admin/goods/category'},
                         {title:'评论管理',path:'/admin/goods/comment'},
                     ]
                 },
