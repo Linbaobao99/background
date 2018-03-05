@@ -1,20 +1,20 @@
 <template>
-    <div id="login">
-        <section>
-            <el-form :model="ruleForm2" status-icon label-position="top" :rules="rules2" ref="ruleForm2" label-width="100px" class="demo-ruleForm">
-                <el-form-item label="账号" prop="uname">
-                    <el-input type="text" v-model="ruleForm2.uname" auto-complete="off"></el-input>
-                </el-form-item>
-                <el-form-item label="密码" prop="upwd">
-                    <el-input type="password" v-model="ruleForm2.upwd" auto-complete="off"></el-input>
-                </el-form-item>
-                <el-form-item>
-                    <el-button type="primary" @click="submitForm('ruleForm2')">登录</el-button>
-                    <el-button @click="resetForm('ruleForm2')">重置</el-button>
-                </el-form-item>
-            </el-form>
-        </section>
-    </div>
+  <div id="login">
+    <section>
+      <el-form :model="ruleForm2" status-icon label-position="top" :rules="rules2" ref="ruleForm2" label-width="100px" class="demo-ruleForm">
+        <el-form-item label="账号" prop="uname">
+          <el-input type="text" v-model="ruleForm2.uname" auto-complete="off"></el-input>
+        </el-form-item>
+        <el-form-item label="密码" prop="upwd">
+          <el-input type="password" v-model="ruleForm2.upwd" auto-complete="off"></el-input>
+        </el-form-item>
+        <el-form-item>
+          <el-button type="primary" @click="submitForm('ruleForm2')">登录</el-button>
+          <el-button @click="resetForm('ruleForm2')">重置</el-button>
+        </el-form-item>
+      </el-form>
+    </section>
+  </div>
 </template>
 
 <script>
@@ -43,11 +43,11 @@ export default {
     login() {
       this.$axios.post(this.$api.login, this.ruleForm2).then(res => {
         if (res.data.status == 0) {
-          this.$alert("登录成功",'提示',{
-              callback:()=>{
-                  this.$router.push({name:'admin'});
-                  localStorage.setItem('name',JSON.stringify(res.data.message))
-              }
+          this.$alert("登录成功", "提示", {
+            callback: () => {
+              this.$router.push({ path: this.$route.query.next || "/admin" });
+              localStorage.setItem("name", JSON.stringify(res.data.message));
+            }
           });
         } else {
           this.$alert(res.data.message);
